@@ -1,0 +1,19 @@
+{
+  "name": "qmart-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/AskhatB/qmart-server.git"
+  },
+  "author": "Askhat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AskhatB/qmart-server/issues"
+  },
+  "homepage": "https://github.com/AskhatB/qmart-server#readme"
+}
