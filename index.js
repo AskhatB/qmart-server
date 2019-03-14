@@ -26,7 +26,8 @@ app.get('/', (req, res) => {
 });
 
 app.post('/product', db.getProduct);
-
+app.post('/product-list', db.getProdcutList);
+app.post('/login', db.userLogin);
 app.listen(port, () => {
   console.log(`App running on port ${port}.`);
 });

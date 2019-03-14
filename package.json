@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +19,7 @@
   "homepage": "https://github.com/AskhatB/qmart-server#readme",
   "dependencies": {
     "express": "^4.16.4",
+    "jsonwebtoken": "^8.5.0",
     "pg": "^7.8.1"
   }
 }
