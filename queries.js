@@ -1,4 +1,3 @@
-const jwt = require('jsonwebtoken');
 const Pool = require('pg').Pool;
 const pool = new Pool({
   user: 'postgres',
@@ -22,7 +21,6 @@ const getProduct = (req, res) => {
 };
 
 const getProdcutList = (req, res) => {
-  console.log(req.body.cartIds);
   pool.query(
     `SELECT * FROM products.product WHERE products.product.id in (${
       req.body.cartIds
@@ -36,19 +34,7 @@ const getProdcutList = (req, res) => {
   );
 };
 
-const userLogin = (req, res) => {
-  const user = {
-    id: 1,
-    username: 'Askhat',
-    email: 'baltabaev.a2509@gmail.com'
-  };
-  jwt.sign({ user: user }, 'secret', (err, token) => {
-    res.json({ token });
-  });
-};
-
 module.exports = {
   getProduct,
-  getProdcutList,
-  userLogin
+  getProdcutList
 };

@@ -18,8 +18,13 @@
   },
   "homepage": "https://github.com/AskhatB/qmart-server#readme",
   "dependencies": {
+    "bcrypt": "^3.0.5",
     "express": "^4.16.4",
     "jsonwebtoken": "^8.5.0",
+    "jwt-simple": "^0.5.5",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
     "pg": "^7.8.1"
   }
 }
