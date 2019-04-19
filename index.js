@@ -22,11 +22,14 @@ app.use((req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-  response.json({ info: 'Node.js, Express, and Postgres API' });
+  res.json({ info: 'Node.js, Express, and Postgres API' });
 });
 
 app.post('/product', db.getProduct);
 app.post('/product-list', db.getProdcutList);
+app.post('/offer-by-barcode', db.getOfferByBarcode);
+app.post('/product-by-barcode', db.getProductByBarcode);
+
 // app.post('/login', db.userLogin);
 app.listen(port, () => {
   console.log(`App running on port ${port}.`);
