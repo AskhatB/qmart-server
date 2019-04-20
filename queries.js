@@ -42,7 +42,8 @@ const getProdcutList = (req, res) => {
     (error, results) => {
       if (error) {
         throw error;
-      }1
+      }
+      1;
       res.status(200).json(results.rows);
     }
   );
