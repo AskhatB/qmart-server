@@ -36,7 +36,7 @@ const getProductByBarcode = (req, res) => {
 
 const getProdcutList = (req, res) => {
   pool.query(
-    `SELECT * FROM products.product WHERE products.product.barcode in (${
+    `SELECT * FROM products.product WHERE products.product.barcode_id in (${
       req.body.cartIds
     })`,
     (error, results) => {
