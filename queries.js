@@ -56,7 +56,7 @@ const getOfferByBarcode = (req, res) => {
     products.offers
     WHERE
     products.offers.productid = (
-      SELECT id FROM
+      SELECT product_id FROM
        products.product
        WHERE products.product.barcode_id = ${
          req.body.barcode
