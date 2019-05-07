@@ -1,9 +1,9 @@
-const Pool = require("pg").Pool;
+const Pool = require('pg').Pool;
 const pool = new Pool({
-  user: "postgres",
-  host: "142.93.136.152",
-  database: "postgres",
-  password: "2203",
+  user: 'postgres',
+  host: '142.93.136.152',
+  database: 'postgres',
+  password: '2203',
   port: 5432
 });
 
@@ -36,9 +36,13 @@ const getProductByBarcode = (req, res) => {
 
 const getProdcutList = (req, res) => {
   pool.query(
-    `SELECT * FROM products.product WHERE products.product.barcode_id in (${
-      req.body.cartIds
-    })`,
+    `SELECT * FROM 
+      products.product as p 
+      INNER JOIN products.offers as o 
+      ON p.product_id=o.productid 
+      where p.barcode_id in (${req.body.cartIds}) AND o.supermarketid = ${
+      req.body.sup_id
+    };`,
     (error, results) => {
       if (error) {
         throw error;
