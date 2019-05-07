@@ -10,7 +10,7 @@ const pool = new Pool({
 const getProduct = (req, res) => {
   const id = parseInt(req.body.id);
   pool.query(
-    `SELECT * FROM products.product WHERE products.product.id = ${id}`,
+    `SELECT * FROM products.product WHERE products.product.product_id = ${id}`,
     (error, results) => {
       if (error) {
         throw error;
