@@ -75,11 +75,11 @@ const getOfferByBarcode = (req, res) => {
 };
 
 const clientRegistration = (req, res) => {
-  const { firstName, lastName, password, phone, birthDate } = req.body;
+  const { firstName, lastName, password, phone } = req.body;
   pool.query(
     `INSERT INTO
-      products.client(first_name, last_name, password, phone, date_birth)
-      VALUES ('${firstName}', '${lastName}', '${password}',${phone}, '${birthDate}')`,
+      products.client(first_name, last_name, password, phone)
+      VALUES ('${firstName}', '${lastName}', '${password}',${phone})`,
     (error, response) => {
       if (error) {
         res.status(200).json(error);
