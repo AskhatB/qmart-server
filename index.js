@@ -29,6 +29,7 @@ app.post('/product', db.getProduct);
 app.post('/product-list', db.getProdcutList);
 app.post('/offer-by-barcode', db.getOfferByBarcode);
 app.post('/product-by-barcode', db.getProductByBarcode);
+app.post('/client-registration', db.clientRegistration);
 
 // app.post('/login', db.userLogin);
 

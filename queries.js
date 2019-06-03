@@ -1,4 +1,4 @@
-const Pool = require('pg').Pool;
+const { Pool } = require('pg');
 const pool = new Pool({
   user: 'postgres',
   host: '142.93.136.152',
@@ -47,7 +47,6 @@ const getProdcutList = (req, res) => {
       if (error) {
         throw error;
       }
-      1;
       res.status(200).json(results.rows);
     }
   );
@@ -75,9 +74,25 @@ const getOfferByBarcode = (req, res) => {
   );
 };
 
+const clientRegistration = (req, res) => {
+  const { firstName, lastName, password, phone, birthDate } = req.body;
+  pool.query(
+    `INSERT INTO
+      products.client(first_name, last_name, password, phone, date_birth)
+      VALUES ('${firstName}', '${lastName}', ${password},${phone}, '${birthDate}')`,
+    (error, _) => {
+      if (error) {
+        res.status(200).json(error);
+      }
+      res.status(200).json({ response: 'SUCCESSFULLY ADDED' });
+    }
+  );
+};
+
 module.exports = {
   getProduct,
   getProdcutList,
   getOfferByBarcode,
-  getProductByBarcode
+  getProductByBarcode,
+  clientRegistration
 };
