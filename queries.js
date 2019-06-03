@@ -84,7 +84,7 @@ const clientRegistration = (req, res) => {
       if (error) {
         res.status(200).json(error);
       }
-      res.status(200).json({ response: 'SUCCESSFULLY ADDED' });
+      res.status(200).json('SUCCESSFULLY ADDED');
     }
   );
 };
