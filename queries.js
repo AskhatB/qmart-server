@@ -79,12 +79,12 @@ const clientRegistration = (req, res) => {
   pool.query(
     `INSERT INTO
       products.client(first_name, last_name, password, phone, date_birth)
-      VALUES ('${firstName}', '${lastName}', ${password},${phone}, '${birthDate}')`,
+      VALUES ('${firstName}', '${lastName}', '${password}',${phone}, '${birthDate}')`,
     (error, response) => {
       if (error) {
         res.status(200).json(error);
       }
-      res.status(200).json('SUCCESSFULLY ADDED');
+      res.status(200).json(response);
     }
   );
 };
