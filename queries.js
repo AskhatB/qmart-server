@@ -80,7 +80,7 @@ const clientRegistration = (req, res) => {
     `INSERT INTO
       products.client(first_name, last_name, password, phone, date_birth)
       VALUES ('${firstName}', '${lastName}', ${password},${phone}, '${birthDate}')`,
-    (error, _) => {
+    (error, response) => {
       if (error) {
         res.status(200).json(error);
       }
