@@ -111,11 +111,29 @@ const clientLogIn = (req, res) => {
   );
 };
 
+const clientInfo = (req, res) => {
+  const { id } = req.body;
+  pool.query(
+    `SELECT * FROM products.client WHERE client_id = ${id}`,
+    (error, respone) => {
+      if (error) {
+        throw error;
+      }
+      try {
+        res.status(200).json(respone.rows[0]);
+      } catch (err) {
+        res.status(200).json({ status: 400 });
+      }
+    }
+  );
+};
+
 module.exports = {
   getProduct,
   getProdcutList,
   getOfferByBarcode,
   getProductByBarcode,
   clientRegistration,
-  clientLogIn
+  clientLogIn,
+  clientInfo
 };
