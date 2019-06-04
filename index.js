@@ -30,7 +30,7 @@ app.post('/product-list', db.getProdcutList);
 app.post('/offer-by-barcode', db.getOfferByBarcode);
 app.post('/product-by-barcode', db.getProductByBarcode);
 app.post('/client-registration', db.clientRegistration);
-
+app.post('/client-sign-in', db.clientLogIn);
 // app.post('/login', db.userLogin);
 
 app.listen(port, () => {

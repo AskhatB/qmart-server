@@ -2,7 +2,7 @@ module.exports = {
   apps : [
     {
       name      : 'qmart-server',
-      script    : 'npm start',
+      script    : 'node index.js',
       args      : 'run start:production',
       env_production : {
         NODE_ENV: 'production'

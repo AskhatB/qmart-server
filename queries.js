@@ -89,10 +89,33 @@ const clientRegistration = (req, res) => {
   );
 };
 
+const clientLogIn = (req, res) => {
+  const { phone, password } = req.body;
+  pool.query(
+    `SELECT client_id, password FROM products.client WHERE phone = ${phone}`,
+    (error, response) => {
+      if (error) {
+        throw error;
+      }
+      try {
+        if (response.rows[0].password !== password) {
+          res.status(200).json({ status: 'Неверный пароль' });
+        } else {
+          res.status(200).json(response.rows[0]);
+        }
+      } catch (err) {
+        console.log(err);
+        res.status(200).json({ status: 'Неверный логин' });
+      }
+    }
+  );
+};
+
 module.exports = {
   getProduct,
   getProdcutList,
   getOfferByBarcode,
   getProductByBarcode,
-  clientRegistration
+  clientRegistration,
+  clientLogIn
 };
