@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/AskhatB/qmart-server#readme",
   "dependencies": {
-    "bcrypt": "^3.0.5",
+    "bcrypt": "^5.0.0",
     "express": "^4.16.4",
     "jsonwebtoken": "^8.5.0",
     "jwt-simple": "^0.5.5",
