@@ -19,7 +19,7 @@
   "homepage": "https://github.com/AskhatB/qmart-server#readme",
   "dependencies": {
     "bcrypt": "^3.0.5",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "jsonwebtoken": "^8.5.0",
     "jwt-simple": "^0.5.5",
     "passport": "^0.4.0",
